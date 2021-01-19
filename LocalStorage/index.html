@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> WDD330 LocalStorage API | Joseoh Itiose | BYU-Idaho</title>
+        <meta name="description" content=" Week 01 - LocalStorage API, Storing
+         and Retrieving Simple Data, Arrays, Associative Arrays, 
+        and Objects documentation site to showcase lesson mastery 
+        for Joseph Itiose WDD330 Web Frontend Development at Brigham Young University-Idaho.">
+
+        <link rel="stylesheet" href="css/lc.css">
+        <link rel="stylesheet" href="css/lc1.css">
+    </head>
+
+    <body>
+       <header>
+           <h1>
+               Joseph Itiose
+           </h1>
+       </header> 
+        <nav>
+            <a href="https://github.com/joejoe2009/wdd330" target="_blank">Home</a>
+            <a href="#">Next Lesson</a>
+            <a href="#objects">Objects</a>
+            <a href="#arrays">Arrays</a>
+            <a href="#assocArray">Associative Arrays</a>
+        </nav>
+        <main>
+            <h2>Week 1 - Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h2>
+            <p>
+                LocalStorage from my understanding persist across multiple sessions, 
+                thus help to store data so it is not lost when the application stops. 
+                LocalStorage enables one to show how to get, store and display users’ data.  
+                In simple terms utilizing localStorage is like going to a shopping cart website and add something to our cart, 
+                then come back to the site later to find the item still in our cart.  
+                Below is a syntax that will help us to better understand how best locastorage works. 
+            </p>
+            <h3>
+                Syntax
+            </h3>
+            <p>
+                To save data<br>
+                localStorage.setItem("itemName", "value")<br>
+                
+                Example:<br>
+                <br> localStorage.itemSet("username", "JoeLarge");<br>
+                To access stored data<br>
+                alert("itemName = " = localStorage.getItem("itemName"));<br>
+                Example:<br>
+                alert("username = " + localStorage.getItem("username"));<br>
+                The alert output would be "username = JoeLarge"  
+            </p>
+            <h3>
+                Is it Supported
+            </h3>
+            <p>
+                Having said all of this, it is important we know that web storage is not always supported, 
+                so before using web storage(local Storage) one must check to ensure that local Storage is available.
+                <br> if (typeof(Storage) !== "undefined"){ //code to execute}<br>
+                else{ <br>
+                //code to execute}<br>
+                This is read as if type of storage is not undefined. 
+                As long as the type of storage is not undefined you can use local storage for your page.
+            </p>
+            <section id="objects">
+                <h3>
+                    Objects
+                </h3>
+                This example helps me illustrate a way of creating an API object. Here I set the itemName and the value. 
+                Here you can create your own object and store your favorite color.<br>
+
+                Favorite Color: <input type="text" id="favoriteColor">
+                <button type="button" onclick="saveColor()">Save Color</button><br> Thus we can retrieve our favorite color from Local Storage. <br>
+                <button type="button" onclick="showColor()">Display Color</button>
+                <div id="colorOutput"></div>
+            </section>
+
+            <section id="arrays">
+                <h3>Arrays</h3>
+                We can do the same thing with Arrays. However local storage can only support strings. We can convert to a string using JSON.stringify() and convert back using JSON.parse. 
+                Lets create an array with your three favorite colors. <br> 0:
+                <input type="text" id="colorOne"><br>1:
+                <input type="text" id="colorTwo"><br>2:
+                <input type="text" id="colorThree"><br>
+                <button type="button" onclick="saveArray()">Save Array</button><br> 
+                Okay let see our new array. Remember Arrays counts the first as 0. So which array item do you want to see? (choose 0,1,2) 
+                <input type="text" id="arrayNum">
+                <button type="button" onclick="displayArray()">Show Me</button>
+                <br>
+                <div id="outputArray"></div>
+            </section>
+
+            <section id="assocArray">
+                <h3>Associative Arrays</h3>
+                This associative Arrays are arrays with names instead of numbers that are assigned to each value. 
+                Lets build an associative array right away. Lets make a list of your favorites items, with your name inclusive. <br> 
+                Name: <input type="text" id="name"><br> 
+                Food: <input type="text" id="food"><br> 
+                Music: <input type="text" id="music"><br> 
+                Movie: <input type="text" id="movie"><br> 
+                Insect: <input type="text" id="insect"><br>
+                <button type="button" onclick="saveAssocArray()">Save Associative Array</button><br> 
+                So lets display your associative array. Please click the button to see the stored result.<br>
+                <button type="button" onclick="displayAssocArrayValue()">Display Value</button><br> 
+                Name:
+                <div id=nameOutput></div>
+                Food:
+                <div id=foodOutput></div>
+                Music:
+                <div id=musicOutput></div>
+                Movie:
+                <div id=movieOutput></div>
+                Insect:
+                <div id=insectOutput></div>
+    
+    
+            </section>
+            
+        </main>
+        <footer>
+            <p> &copy; Joseph Itiose <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+        </footer>
+        <script src="js/lc.js"></script>
+    </body>
+
+</html>
