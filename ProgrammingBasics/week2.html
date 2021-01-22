@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> WDD 330 JavaScript - Loops, Functions, Arrays | Joseph Itiose | BYU-Idaho</title>
+        <meta name="description" content=" Week 2 - JavaScript - Loops, Functions, Arrays, Logical Statements 
+        documentation site to showcase lesson mastery for Joseph Itiose in WDD 330 
+        web frontend development at Brigham Young University-Idaho.">
+        <link rel="stylesheet" href="css/lc2.css">
+    </head>
+        <body>
+            <header>
+                <h1> Joseph Itiose</h1>
+            </header>
+            <nav>
+                <a href="https://github.com/joejoe2009/wdd330" target="_blank">Home</a>
+                <a href="#">Next Lesson</a>
+                <a href="#loops">Loops</a>
+                <a href="#condState">logical Statements</a>
+                <a href="#array">Arrays</a>
+                <a href="#arrayM">Array Method</a>
+
+            </nav>
+
+            <main>
+                <h2>Week 2 - JavaScript - Loops, Logical Statements, Functions, <br>Arrays, Array Method</h2>
+            <!---All about functions--->
+                <h3> Functions, Variables and Parameters </h3>
+
+                <section>
+                    A function in JavaScript is similar to a procedure, it is a set of statements that performs a task or calculates a value. 
+                    Where there is some obvious relationship between the input and the output it should be able to take some input and return 
+                    an output. This clearly makes a procedure to qualify as a function. We have many different types of functions. 
+                    Here in this lesson we will see how functions is used to showcase understanding of loops, Conditional Statements, and Arrays. 
+                    For a better understanding of functions we need to explain variables and parameters. All programs uses variables and 
+                    parameters that contains values that the program will need.<br>
+                        <blockquote><b>Variable</b> - In programming a variable is basically a box that contains something. It could be a number, text, or something else. We can define a variable using this format.
+                        <blockquote>var varnameN = "valueN";</blockquote>
+                            The keyword var enables the computer to know we are creating a new box. The = means that we are putting something in
+                             the box. To make it easier when we define variables with functions, strings, or even lists, you have to think about variables like this syntax above.
+                             <br></blockquote>
+                    <blockquote><b>Parameters</b> - I will like to define parameter in simple terms. In this context lets say a parameter is used 
+                        to identify which variables will be used in the function. Again to make more sense we could say a parameter is a named variable passed into a function
+                         Think about parameter as variables used to import arguments into functions. we could call the variables doors into a function.
+                         The doors are labeled. Once information goes through the door it can be used in the function. 
+                         It also lets the program pass information into the function. </blockquote>
+                        <br>All functions follow the same format and have the same basic parts.<br>
+                    <blockquote>function funcnameN(<i>parameter1, parameter2,...</i>){
+                            <blockquote>
+                        statements; <br>
+                        return value; <br>
+                                }</blockquote>
+                    </blockquote>
+                    <ul>
+                        <li> function keyword - this lets the computer know you are starting a function</li>
+                        <li> funcnameN - this unique identifier is used to call (or run) the function. </li>
+                        <li> parameter list - this is used to identify what variables (information) will be fed into the function. when the function is called using its name, the value of the parameters can be assigned.</li>
+                        <li> statements - this is where all the work of the function is done. </li>
+                        <li> return value - this is the result of the function or what comes out of it. It is returned to the part of the program that called the function (or made it run)</li>
+                    </ul>
+                   Now lets show some functions at work!
+                    </section>
+
+                    <hr>
+                    <!--- Loops --->
+                    <h3><a name="loops"></a> Loops </h3>
+                    <section>
+                        Loops offer a quick and easy way to do something repeatedly, refer to a function where the statments are run multiple times while a certian 
+                        condition is followed. For our example we are going to do a loop that will display a times table. The user will input the 
+                        times table they want to see and how large they want it to be. When the user clicks the button, the computer will call the 
+                        function to run. The statements inside the function thus calculate the times table, add each times table to what will be the 
+                        output, until the users specificity is met in relation to the table size. As soon as the table size is met, the program will 
+                        send the total times table to the computer for display. For clarity lets see what the code for this loop looks like below.
+
+                        <blockquote>
+
+                            function timesTable(timesTableNum, tableSize){ <br>
+                           <blockquote> var timesTableNum = parseInt(document.getElementById("timesTableNumInput").value); <br>
+                            var tableSize = parseInt(document.getElementById("timesTableSizeInput").value); <br>
+                            var ans = 0; <br>
+                            var i = 0; <br>
+                            var output = "";<br>
+                                while (i<=tableSize)
+                                     {<br><blockquote>
+                                     ans = timesTableNum*i;
+                                     output += timesTableNum + " x " + i + "    = " + ans + &lt;br&gt;;<br>
+                                     i++;}</blockquote>
+                        document.getElementById("timesTableDiv").innerHTML = output; }</blockquote>
+                    </blockquote>
+
+                    <h4> Loops Example - Times Tables</h4>
+            Please enter which times table you want to see <br>   <i>(example "4" for a 4 times table or "11" for 11 times table)</i> 
+            <input type="text" id="timesTableNumInput"> <br>
+            Please enter the size of table you would like to see. This will be the last times table you will see. <br>    <i>(example for a table that goes from 4x0 -> 4x11 enter "11")</i> 
+            <input type="text" id="timesTableSizeInput">
+            <button type="button" onclick="timesTable()"> Show the table!</button><br>
+                Results: <br>
+            <div id="timesTableDiv"></div>
+            </section>
+<hr>
+
+            <!---- Logical Statements ---->
+            <h3><a name="condState"></a> Logical Statements </h3>
+            <section>
+                in this section we are looking at logical conditions that allow you to control the flow of a program, it thus gives a logical condition 
+                telling the computer to evaluate if a condition is true. This is a natural occurrence that will observe in our everyday life.
+                For example, in order to join a boys scout by yourself you have to be at least 12 years old and 80 inches tall. We can write a function 
+                to ask the user for their age and height to determine if they can join boys scout. If the applicant is over 80 inches tall but not 
+                yet 12years old they can still join with the consent of their parents. The function would look like this.
+                <blockquote>
+                    function canRide(age,height){
+                   <blockquote> var age = parseInt(document.getElementById("riderAge").value);<br>
+                    var height = parseInt(document.getElementById("riderHeight").value);<br>
+                    var output = "";<br>
+                    <blockquote>if (age >= 12 && height >= 80){<br>
+                    <blockquote>output = "Hooray! You can join boys scout by yourself!";<br>
+                        }</blockquote>
+                    else if (height >= 80){<br>
+                    <blockquote>output = "Not quite old enough, but don't give up! You can still join with the consent of your parents!";<br>
+                        }</blockquote>
+                    else {<br>
+                    <blockquote>output = "I am sorry you must be over 80 inches to join, and 12 or older to join by yourself";<br>
+                        }</blockquote></blockquote>
+                    document.getElementById("joinDiv").innerHTML = output;
+                       }</blockquote>
+
+                 </blockquote>
+
+                 Lets give it a try!
+                 <h4> Logical condition Example</h4>
+                 The Boy Scouts of America is the largest scouting organization and one of the largest youth organizations in the United States
+                 with about 2.3 million youth participants and about one million adult volunteers
+                 Even if no one else wants to join, because of it varst nature it is a must join. Lets find out if you can join by yourself. <br>
+                 How old are you? <input type="text" id="applicantAge"><br>
+                 How tall are you in inches? <input type="text" id="applicantHeight"><br>
+                 Can you join? <button type="button" onclick="canJoin()"> Find out!</button><br>
+                 Results: <div id="joinDiv"></div>
+                 </section>
+             <hr>
+
+
+                         <!---- Arrays --->
+                         <section>
+                            <h3><a name="array"></a>Arrays</h3>
+                            Arrays are a neat way of storing a list of data items under a single variable name and it is a special  
+                            kind of variable that can hold more than one value. It allows us to store lists in one variable. 
+                             Here are a few important things to understand about arrays. <br>
+            
+                             Syntax - var<italics>array_name = [item1, item2, item3,...]</italics><br>
+                            Creating an Array - To create a new array we use "new" keyword like in the following example:
+                                <blockquote> var join = <italics>new</italics> Array[ Boys Brigade, Church Lads Brigade, YMCA Boy Scouts]</blockquote>
+                            Each item seperated by a comma is stored in a spot in the array. Each spot is numbered starting with 0. You can see any item in an array by using its number.
+                                <blockquote>For example: join[0] = boys Brigade, join[1]= Church Lads Brigade </blockquote>
+                            You can add new items to an existing array by "pushing" into the list.
+                                <blockquote>For example: join.push( Chums Scout Patrols) would add " Chums Scout Patrols" to the last spot in our array.</blockquote>
+                            Array Length - All arrays have a special property called "length" this tells us how many items are in the array.
+                                <blockquote>For example: var join = [Boys Brigade, Church Lads Brigade, YMCA Boy Scouts, Chums Scout Patrols]; join.length = 4</blockquote>
+            <br>Lets do some fun examples using the array we have already created.<br>
+            Add another scout organization to the array<input type="text" id="newApplicant">
+            <button type="button" onclick="addApplicant()">Add Applicant</button>
+            <br>Here is the new list of applicant we plan to allow join the boys scout organization:
+            <div id="joinArrayDiv"></div>
+            We just found out that the boys scout are off to a new season. Too bad! Lets change it to "Join new scout season" since they can join in the coming new season too.
+            <button type="button" onclick="addNew()">Switch Join</button><br>
+            Here is our updated list of applicants:
+            <div id="updatedJoinDiv"></div>
+                       </section>
+                    </main>
+                    <footer>
+                        <p>&copy; Joseph Itiose <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+                    </footer>
+        <script src="js/lc.js"></script>
+        </body>
+                </html>
