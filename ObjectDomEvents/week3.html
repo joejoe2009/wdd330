@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> WDD 330 Object, DOM, and Events | Joseph Itiose | BYU-Idaho</title>
+    <meta name="description" content=" week 3 - Objects summarized, and DOM explained using createElement, appendChild, insertBefore, removeChild, and Events summarized, 
+    documentation site to showcase lesson mastery for Joseph Itiose in wdd 330 at Brigham Young University-Idaho.">
+    <link rel="stylesheet" href="css/lc3.css">
+
+</head>
+
+<body>
+    <header>
+        <h1> Joseph Itiose</h1>
+    </header>
+    <nav>
+        <a href="https://github.com/joejoe2009/wdd330" target="_blank">Home</a>
+        <a href="#">Next Lesson</a>
+        <a href="#object">Object</a>
+        <a href="#createElement">createElement</a>
+        <a href="#appendChild">appendChild</a>
+        <a href="#insertBefore">insertBefore</a>
+        <a href="#removeChild">removeChild</a>
+        <a href="#events">Events</a>
+        
+    </nav>
+    <main>
+        <h2>Week 3- Objects summarized, and DOM explained using createElement,
+         appendChild, insertBefore, removeChild, and Events summarized</h2>
+
+            <!---All about Objects--->
+            <h3> Objects </h3>
+         
+        <p>
+            Everything in JavaScript is an object. We’ve actually met some objects already, 
+            like arrays and functions are both objects, although these are built-in objects 
+            that are part of the language. In this lesson we’re going to creates objects.
+        </p>
+        <h3 id="object">CreatingObject</h3>
+        <hr>
+        <p>
+        To create an object literal, we simply enter a pair of curly braces. 
+        The following example creates an empty object that is assigned to the variable spiderman:<br>
+
+         var spiderman = {}; <br>
+
+         We can access the properties of an object using the dot notation, for example 'superman.name' Again we can access 
+         the properties of an object using the bracket notation, for example 'superman['name'] <br>
+
+         <h4>Calling Method</h4> <hr>
+         Calling an object’s method, a dot or bracket notation can be used. Calling a method is the 
+         same as invoking a function, so parentheses need to be placed after the method name: like in this image below<br>
+        <br>
+         <img src="image/ex.png" alt="example calling method"> <br>
+         In the same vein we can check for a particular property of an object, using the in operator. For example we can check to know what property the object superman has using this code below:<br>
+         <br>
+         <img src="image/ex1.png" alt="example checking property of an object"><br>
+         Again an object can also inherit from other objects. for us to be able to do this, objects have a method called hasOwnProperty(). This allow us to check if an object has a property that is its own, rather than one that has been inherited from another object.
+         The example code below demonstrate how hasOwnProperty() methjod can be use to check if an object has a property or not.<br>
+         <br>
+         <img src="image/ex2.png" alt="example inhering from other objects"><br>
+         It is pertinent to know that we can loop through an objects properties and methods by using a for inloop. The following code below shows us how to log all the properties of the superman object to the console using the for inloop.<br>
+         <br>
+         <img src="image/ex3.png" alt="example showing for inloop">
+
+        <h4>Nesting Object</h4> <hr>
+        When objects contain other object, it is called nested objects. Accessing the values in nested object we reference each property name in order using either dot or bracket notation. The images Below show us an example of an object that contains a list of other objects and it value referencing property name. it's been assigned to the variable jla:<br>
+        <img src="image/ex4.png" alt="example showing an object that list of other objects"> <br>
+        <br>
+        <img src="image/ex5.png" alt="example showung values in nested objects">
+        </p>
+
+          <!---All about Document Object Model--->
+        <h3>The Document Object Model</h3><hr>
+
+        <p> We can call it DOM for short. This has a lot of functions that it renders a programmer. One of this is that it can be use to change the content in our HTML. We can add, change or remove a child element. We can even insert one element infront of another. We will do all of this starting with a basic list of favorite movies.</p>
+        <ol>
+            <li>Meet the Mormons</li>
+            <li>The fighting Preacher</li>
+            <li>Out of Liberty</li>
+        </ol>
+        <h3 id="createElement">createElement</h3>
+        <hr>
+        <p>DOM can be use to create a new element on our page. Click the button to add a new paragraph</p>
+        <button type="button" onclick="create()"> Create New</button>
+        <div id="npc"></div>
+       <br>
+        <img src="image/exxx.png" alt="image showing example code">
+        <h3 id="appendChild">appendChild</h3>
+        <hr>
+<p> Okay back to our list. Instead of creating a new element we want to just change the list element we already created. We can do this with appendChild. The "li" is a child of our "ol" Click the button to add Joe vs the Volcano to our list of favorite movies
+    <br>***Note - we actually appended the child in the first example to add text to the new paragraph we created***</p>
+        <ol id="mov">
+            <li>Meet the Mormons</li>
+            <li>The fighting Preacher</li>
+            <li>Out of Liberty</li>
+        </ol>
+        <button type="button" onclick="changeList()">Add Movie</button>
+        <br>
+        <img src="image/exxx1.png" alt="example code showing list">
+        <h3 id="insertBefore">insertBefore</h3>
+        <hr>
+        <p>Earlier today I watched 'Out of liberty' and I loved it. So if I want to add it as my number one movie. I can do this using insertBefore.  </p>
+        <ol id="movi">
+            <li>Meet the Mormons</li>
+            <li>The fighting Preacher</li>
+            <li>Out of Liberty</li>
+            <li>Trek the Movie</li>
+        </ol>
+        <button type="button" onclick="addFirst()">Insert list</button>
+        <br>
+        <img src="image/exxx3.png" alt="example code to add new list">
+        <h3 id="removeChild">removeChild</h3>
+        <hr>
+        <p> I have watch this movies severally, that it becomes boring and no longer interesting to watch. As much as I love this movies I just need to take one of them out of my list.. It thus possible with the aid of removeChild.</p>
+        <ol id="mmovi">
+            <li>The Saratov Approach</li>
+            <li>Meet the Mormons</li>
+            <li>The fighting preacher</li>
+            <li>Out of Liberty</li>
+            <li>Trek the movie</li>
+        </ol>
+        <button type="button" onclick="remove()">Remove from list</button>
+        <br>
+        <img src="image/exxx2.png" alt="example code showing remove method">
+           
+        <!---All about Events--->
+        <h3 id="events">Events</h3><hr>
+        
+        <p>
+            In the last section we saw how the DOM act as an interface that allows us to use JavaScript to interact with a web page. Another part of the DOM that provides the link between the web page and user interactions is called Events. Thus, this event occurs every time a user interacts with a web page, such as pressing a key, or moving a mouse. In this section we discuss Event listerner and The event object. 
+
+           <h4>Events Listerners</h4><hr>
+           Event listerner gives us the oppurtunity to be able to get a notification as soon as something happens with our program. Instead of us having to constantly check to see if an event has occurred, the event listener will let it know when the event happens, thus enabling us to then respond appropriately. This allows us as programmer to continue with other tasks while we waits for the event to happen. for a better understanding we would use the following code in this image to attach an event listerner to the document that fires when the user clicks anywhere on the page.<br>
+           
+           In the example we are adding an event listerner that when click affects the whole page because this addEventListner methjod is called without a node referemce preceding it.<br>
+           <br>
+           <img src="image/exx.png" alt="click me">
+           <br>
+
+           To have a practical view of the event listerner, the image below is an example code that contains the following HTML code. and in thw nwxt image it demonstrate how we add the following code to main.js also save in the same HTML file<br>
+           <br>
+           <img src="image/exx1.png" alt="Example code of event listerner"><br>
+           So as we try to open the HTML file of the example above, in a browser with the console open and click anywhere on the page. You should see this message in the console: as the following image depicts below.<br>
+           <br>
+           <img src="image/exx2.png" alt="console message"><br>
+           <br>
+               
+           <h4>The Event Object</h4><hr>
+        
+           The callback function is called whenever an event handler is triggered by an event. Thus the function is automatically passed a parameter containing informations about an event object. This is where we use the type property that tells us what type of event logged. The following image shows an example code:<br>
+           <img src="image/exx3.png" alt="Example code">
+
+        </p>
+
+    </main>
+    <footer>
+        <p> &copy; Joseph Itiose <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+    </footer>
+    <script src="js/lc.js"></script>
+</body>
+
+</html>
