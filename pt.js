@@ -12,6 +12,10 @@ const links = [
 		url: "ObjectDomEvents/week3.html"
 	},
 	{
+		label: "Week 04 Notes",
+		url: "FormsOopMj/week4.html"
+	},
+	{
 		label: "Week 02 Application",
 		url: "week1/app.html"
 	},
