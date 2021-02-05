@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> WDD 330 Forms, OOP, and Moderm JavaScript | Joseph Itiose | BYU-Idaho</title>
+    <meta name="description" content=" week 4 - Forms method, and OOP implementation using jacascript, and Moderm JavaScript summarized, 
+    documentation site to showcase lesson mastery for Joseph Itiose in wdd 330 at Brigham Young University-Idaho.">
+    <link rel="stylesheet" href="css/lc4.css">
+    <link href="css/normalize.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1> Joseph Itiose</h1>
+    </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primaryNav" class="hide">
+        <li><a href="https://github.com/joejoe2009/wdd330" target="_blank">Home</a></li>
+        <li><a href="#">Next Lesson</a></li>
+        <li><a href="#forms">forms</a></li>
+        <li><a href="#objectOrientedProgramming">OOP</a></li>
+        <li><a href="#modermJavaScript">MJ</a></li>
+    </ul> 
+    </nav>
+
+    <main>
+        <h2>Week 4- Forms method, and OOP implementation using jacascript, and 
+            Moderm JavaScript summarized, </h2>
+
+            <!---All Forms method--->
+            <h3 id="forms"> Forms </h3>
+
+            <p>Forms are the most common method of interacting with a web page, and most of us use forms 
+            every day to log into our favorite sites as we use the internet. During the 
+            course of this topic we will look into how JavaScript program enables forms 
+            interaction. "it is important we know forms are made up of a element 
+            that hold form controls such as input fileds, buttons and select menus.Please view below the image
+            showing sample of a form that has one input filed and a button to submit search query."<br>
+            <br>
+            <img src="image/sa.png" alt="form sample"><br>
+            <br>
+            The above sample image shows the form has a name attribute of "search" and holds two 
+            controls where a user will be able to enter search phrase and a button to submit the form.<br>
+
+            <h4>Accessing Form Element</h4><hr>
+            The document object model(DOM) comes in handy here as it had a method called document.forms that will help return an HTML collections of all forms element in the order they appear. To make this possible we have to 
+            use index notation to return form object, like the sample image below.<br> 
+            <br>
+            <img src="image/saa.png" alt="sample returning form object"><br>
+            <br>
+            In the same vein the form object also has a method(elements) that an HTML collections of all the elements contained in the form. Please for better understanding view the sample image below. <br>
+            <br>
+            <img src="image/sa1.png" Alt="Sample method returns elements"><br>
+            <br>
+            <h4>Form Controls</h4><hr>
+            We have some form control that can help our web pages to be more interactive, the image below showcase the different type of form controls and following, the other image showcase a form to demonstrate these HTML form Controls.<br>
+            <br>
+            <img src="image/saa1.png" alt="sample showing different form controls"><br>
+            <br>
+            <img src="image/sa2.png" alt="sample demonstarting html form controls"><br>
+            <br>
+            Below is a form that can be use to book reservation in a temple inn.
+            <h1>Book Your Reservation</h1>
+        <form method="get" action="thanks.html">
+            <fieldset>
+            <legend>Registrant Personal Information</legend>
+                <label class="top">Full Name* <input type="text" name="fname" required></label>
+                <label class="top">Email* <input type="email" name="email" placeholder="someone@gmail.com" required></label>
+                <label class="top">Phone* <input type="tel" name="phone" placeholder="1235551234" required></label>
+                <label class="top">Zip code* <input type="number" name="code"></label>
+                <label class="top">Anticipated Reservation Date* <input type="date" name="reserveDate"></label>
+                <label class="top">Country <input type="text" name="country"></label>
+                 <label class="top">Website <input type="url" name="url" placeholder="http://"></label>
+            
+            
+            </fieldset>
+
+            <fieldset>
+                <legend>additional information or comments</legend>
+                <textarea rows="5" cols="35"></textarea>
+            </fieldset>
+                <input type="submit" value="Make Reservation" class="submitBtn">
+
+        </form><br>
+        <br>
+          <!---All about Object Oriented programming--->
+          <h3 id="objectOrientedProgramming">The Object Oriented Programming</h3><hr>
+          It is called OOP for short, it involves seperating code into objects that have properties and methods.
+          Object oriented programming can be used to model representations of objects in the real world.We have three main concepts in OOP: encapsulation, polymorphism and inheritance.<br>
+          <br>
+          <h4>Encapsulation</h4><hr>
+          It help to show the essential functionalities to the end user and help to hide the inner workings inside the object.
+          We could simply say it involves keeping all the programming logic inside an object and making methods available to implement the functionality, without the outside world needing to know how it’s done.<br>
+          <br>
+          <h4>Polymorphism</h4><hr>
+          This concept in OOP try to help us understand that various objects can share the same method, but also have the ability to override shared methods with a more specific implementation.<br>
+          <br>
+          <h4>Inheritance</h4><hr>
+          This concept in OOP demonstrate taking features of one object then adding some new features. 
+          In simple terms, this means we can take an object that already exists and inherit all its properties and methods. We can then improve on its functionality by adding new properties and methods.Lets see alternative way to create objects.<br>
+          <br>
+          <h4>Constructor Function</h4>
+          This is a function that describe the properties and methods of an object. The image below shows an example of a constructor functions.<br>
+          <br>
+          <img src="image/saa2.png" alt="sample construction function">
+          <br>
+          <h4>The Constructor Property</h4><hr>
+          Constructor property returns the constructor function that created it as all objects have the constructor property that makes this possible.
+          The following image example will help buttress the constructor property.<br>
+          <br>
+          <img src="image/sac.png" alt="sample constructor property">
+            <br>
+          <!---All about Modern JavaScript Development--->
+          <h3 id="modermJavaScript">Modern JavaScript Development</h3><hr>
+          Modern JavaScript development gives us the enablement to look at the various frameworks and tools that can used to enhance the quality of our code. Thus, making it more organized and easier to maintain, enabling code reuse and making ready our applications for production.<br>
+          These modern javaScript development makes it readily available to ensure we know of the following topic, as shown in the image below.<br>
+          <br>
+          <img src="image/sac1.png" alt="dicuss">
+          <br>
+          <h4>MVC Frameworks</h4><hr>
+          MVC is an architectural pattern that seperates an application into three independent component that ensure basic interaction with each other. MVC is industry standard web development framework to create scalable and extensible projects, and it is frequently used. The image below shows a component of MVC:<br>
+          <br>
+          <img src="image/sac2.png" alt="Component of MVC">
+          <br>
+          <strong>Models</strong>
+          This implements the functionality fo creating, reading, updating and deleting(CRUD), this task is known as CRUD and does a specific operation in the associated logic and behavior. For example a customer object will retrieve the customer information from database, manipulate it and update it data back to the database.<br>
+          <br>
+          <strong>Views</strong>
+          This provides a visual representation of the model, thus enabling information access, and makes available for the user the oppurtunity to interact with the application. For example the user view will include all the UI components such as text boxes, dropdowns, etc.<br>
+          <br>
+          <strong>Controllers</strong>
+          This acts an interface between model and view to process all incoming request, as it enables communication between the model and view components. For Example For example, the Customer controller will handle all the interactions and inputs from the Customer View and update the database using the Customer Model. The same controller will be used to view the Customer data.<br>
+          The image below shows an example of how the MVC architecture can be implemented using JavaScript.<br>
+          <br>
+          <img src="image/saac.png" alt="MVC implementation using JavaScript"><br>
+          <br>
+          This is a basic HTML containing a form with a single input field for entering a list item. We need to create the JavaScript file, and save same in the folder.The images below shows the javScript(code), that will be added to .js file: these images shows the controller object responsible for adding an event listerner to the form to notice when the user adds information. Follwoing image shows the view object with a render () method. The last image shows the watch () method that will keep an eye on the form and checks when it is submitted. <br>
+          <br>
+          <img src="image/saac1.png" alt="JavaScript"><br>
+          <br>
+          <img src="image/saac2.png" alt="controller object"><br>
+          <br>
+          <img src="image/saac3.png" alt="view object"><br>
+          <br>
+          <img src="image/saac4.png" alt="watch method"><br>
+          <br>
+          <h4>Package Managers</h4><hr>
+          A package is just a directory with one or more files of code, as well as a package.json file that contains information about the code in the package.  A package manager makes it easy to install, upgrade and remove any packages that are used in a project. They also allow you to manage different versions of packages. package managers can also help with dependency management.
+          It is also possible to install packages globally so they’re available system-wide from any directory on your machine, this might sound like a good idea at first, nut it is not advisable we use it, except in some cases where we feel it makes sense to intall globally, usually,  when the package is to be used on a system-wide basis.
+
+        </p>
+     </main>
+     <footer>
+        <button onclick="myCurrentDate()">Day</button>
+        <p id="currentDate"></p>
+        <p> &copy; Joseph Itiose <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+    </footer>
+    <script src="js/lc.js"></script>
+ </body>
+ 
+ </html>
+         
