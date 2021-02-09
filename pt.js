@@ -16,8 +16,8 @@ const links = [
 		url: "FormsOopMj/week4.html"
 	},
 	{
-		label: "Week 02 Application",
-		url: "week1/app.html"
+		label: "Week 05 Notes",
+		url: "TestDeb/week5.html"
 	},
 	{
 		label: "Team Activity",

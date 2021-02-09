@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> WDD 330 Testing and Debugging | Joseph Itiose | BYU-Idaho</title>
+    <meta name="description" content=" week 5 - Testing and Debugging summarized, 
+    documentation site to showcase lesson mastery for Joseph Itiose in wdd 330 at Brigham Young University-Idaho.">
+    <link rel="stylesheet" href="css/lc5.css">
+    <link href="css/normalize.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1> Joseph Itiose</h1>
+    </header>
+
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primaryNav" class="hide">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Next Lesson</a></li>
+        <li><a href="#testing">Testing</a></li>
+        <li><a href="#debugging">Debugging</a></li>
+    </ul> 
+    </nav>
+
+    <main>
+        <h2>Week 5- Tesing and Debugging summarized, </h2>
+
+            <!---The importance of testing and debugging--->
+            <h3 id="testing"> Testing </h3>
+
+            <p>Errors is an unavoidable phenomenon in programming. As programmers we try our 
+                best to minimize it impacts and ensure that we find ways to identify and deal 
+                with them quickly. In this section we will be discussing the importance of 
+                testing. <br>
+<h4>The Importance of Testing</h4><hr>
+The importance of testing is glaring before programmers as this will help to identify any 
+defects or errors that could possibly be made during development phase. In making sure this is
+ achieved programmers ensure exceptions are caught and dealth with, and code is tested 
+ rigorously. Product success is gauged by customers reliability on the product. Its quality 
+ speaks volume, So for us to deliver high quality product, proper testing is required, as this 
+ enhances the level of support or facilities given to the customers. Moreover, a well-tested 
+ product incurs lesser maintenance cost and so the results delivered are more accurate, 
+ consistent and reliable.With the help of testing the overall security of the product can be 
+ improved. For this reasons programmer should ensure that the code they write fails loudly in 
+ development so any errors can be identified and fixed quickly. For us to eliminate silent 
+ javaScript error we would talk briefly about Strict Mode and its benefit <br>
+
+ <h4>Strict Mode and Its Benefit</h4><hr>
+ Strict mode eliminates some JavaScript silent errors by changing them to throw errors. it prevent
+ errors, when relatively “unsafe” actions are taken (such as gaining access to the global object)
+ The aim to “use strict” literal is to indicate that the code should be executed in the 
+ “strict mode.” It helps us to identify some hidden bugs. We can’t use undeclared variables in
+  strict mode. below we list some benefits of Strict Mode: <br>
+ <strong>Benefits</strong>
+  <li>Strict mode makes it easier to write “secure” JavaScript.</li>
+  <li>Strict mode prohibits some syntax likely to be defined in future versions of ECMAScript.</li>
+  <li>strict mode code can sometimes be made to run faster than identical code that’s not strict mode.</li>
+  <li>Strict mode fixes mistakes that make it difficult for JavaScript engines to perform optimizations:</li><br>
+  Generally, strict mode encourages a better quality of JavaScript to be written that befits 
+  a programmer, so its use is recommended. Using strict mode in javascript the following image 
+  shows the string to be added in the first line of a JavaScript file.<br>
+  <br>
+  <img src="image/sm.png" alt="string to be added in javascript file"> <br>
+  <br>
+  It is important we know of "Strict Mode Invocation" as strict mode is applicable to entire 
+  scripts or the individual functions. We can’t apply it to the block statements enclosed in {} 
+  braces. If we try to use it inside blocks, it will have NO effect. The image below shows applying 'Strict' mode to the entire Script. <br>
+  <br>
+  <img src="image/sm1.png" ait="applying strict"><br>
+  <br>
+
+  use strict statement has eliminated some JavaScript silent errors by changing them to throw 
+  errors. It is quite useful when we are debugging any web Application. This images below will
+  show us the effect of using'Strict' and not using 'Strict' in a Javascript file.<br>
+  <br>
+  <li>using ‘strict’ statement</li>
+  <img src="image/smm.png" alt="using strict"><br>
+  <br>
+  <li>without ‘strict’</li>
+  <img src="image/smm1.png" alt="withou strict"><br>
+  <br>
+  You can even use strict mode on a per-function basis by adding the line inside a function. 
+  Strict mode will then only be applied to anything inside that function: the image below will 
+  help to illustrate the use of strict inside a function.<br>
+  <br>
+  <img src="image/sm2.png" alt="using strict inside a function"><br>
+  <br>
+  what the above image shows us is that scope of “use strict” is bound to function only and 
+  not the whole script file.<br>
+  <br>
+  <h3 id="debugging">Debugging</h3><hr>
+  Debugging is the process of finding out where bugs occur in the code and then dealing with 
+  them. It is the process of detecting and removing of existing and potential errors (also 
+  called as ‘bugs’) in a code that can cause it to behave unexpectedly or crash. Lets look at some debugging tools<br>
+  <br>
+  <strong>Debugging Tools</strong><br>
+  <br>
+  Most modern browsers also have a debugging tool that allows you to set breakpoints in your 
+  code that will pause it at certain points. Then all values of the variables can be seen at 
+  these points and then get modified. Thus this can be very handy when trying to track down bugs.
+  Below is the links to the debugger documentation for each of the major browsers:<br>
+  <br>
+  <li>Chrome</li>
+  <li>Edge</li>
+  <li>Firefox</li>
+  <li>Safari</li>
+  <br>
+  One useful commands is the debuuger Keyword. This will create a breakpoint in a code that 
+  will pause the execution of the code and allow one to see where the program is currently up to.
+  You can hover over any variables to see what value they hold at that point
+  The image example below shows how the debugger command can be used, as you then invoke the 
+  amIOldEnough() function, the browser's debugging tool will automatically 
+  kick in and you'll be able see the value of the age variable by hovering over it:<br>
+  <br>
+  <img src="image/sm3.png" alt="debugger command"><br>
+  <br>
+  It is important to remember to remove any references to the debugger command before shipping any code, otherwise 
+  the program will appear to freeze when people try to use it!
+
+</p>
+</main>
+<footer>
+   <button onclick="myCurrentDate()">Day</button>
+   <p id="currentDate"></p>
+   <p> &copy; Joseph Itiose <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+</footer>
+<script src="js/lc.js"></script>
+</body>
+
+</html>
+
+
