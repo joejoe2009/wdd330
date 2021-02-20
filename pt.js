@@ -20,6 +20,10 @@ const links = [
 		url: "TestDeb/week5.html"
 	},
 	{
+		label: "Challenge one: To-Do",
+		url: "todoProject/todo.html"
+	},
+	{
 		label: "Team Activity",
 		url: "TeamActivity/index-F.html"
 	}

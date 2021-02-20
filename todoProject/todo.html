@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>To-Do</title>
+      <meta name="author" content="Joseph Itiose">
+      <meta name="description" content="WD330 Challenge One: Todo">   
+      <link href="css/todo.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Goal here is to parse a todo.txt file and create Todo list
+    save to local storage. -->
+    
+    <div id="todoList">
+        <div id="title">Challenge One: Todo!</div>
+        <a href="../index.html">Home</a>
+        <ul id="todos">
+        </ul>
+        <div id="add">
+            <label for="addInput">Add a Todo</label>
+            <input type="text" name="addInput" id="addInput">
+            <button onclick="handleAdd()">+</button>
+        </div>
+
+        <div id="tremain">
+            <label for="all"></label>
+            <button onclick="handleAll()">All</button>
+        </div>
+
+        <div id="tremain">
+            <label for="complete"></label>
+            <button onclick="handleComplete()">Complete</button>
+        </div>
+
+        <div id="tremain">
+            <label for="incomplete"></label>
+            <button onclick="handleIncomplete()">Incomplete</button>
+        </div>
+
+    </div>
+
+    <script src="js/todo.js"></script>
+</body>
+
+</html>
