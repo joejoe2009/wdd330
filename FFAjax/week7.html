@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> WDD 330 Further Functions and Ajax | Joseph Itiose | BYU-Idaho</title>
+    <meta name="description" content=" week 7 - Further Functions and Ajax summarized, 
+    documentation site to showcase lesson mastery for Joseph Itiose in wdd 330 at Brigham Young University-Idaho.">
+    <link rel="stylesheet" href="css/lc7.css">
+    <link href="css/normalize.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1> Joseph Itiose</h1>
+    </header>
+
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primaryNav" class="hide">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Next Lesson</a></li>
+        <li><a href="#furtherFunctions">FurtherFunctions</a></li>
+        <li><a href="#ajax">Ajax</a></li>
+    </ul> 
+    </nav>
+
+    <main>
+        <h2>Week 7- Further Functions and Ajax summarized, </h2>
+
+            <!---The importance of Further Functions--->
+            <h3 id="furtherFunctions"> FurtherFunctions </h3>
+
+        <p>
+            In JavaScript, functions are first-class objects, which means they can be passed around in the same way as every other value.They are a flexible tool to work with in javascript as they can have their own properties and methods, thus accepting other functions as parameters and being returned by other functions.
+            Here we are going to learn some very important concept like:
+
+            <li>
+                Function properties and methods
+            </li>
+
+            <li>
+                Recursive functions
+            </li>
+
+            <li>
+                Callbacks
+            </li>
+
+            <li>
+                Functions that return functions
+            </li>
+
+            <li>
+                Closures
+            </li> <br>
+
+            <h3>Function Properties and Methods</h3><hr>
+            Functions having properties and methods themselves show while function is a first-class objects. The following image shows an example of length property in a functions that return the number of parameters the functions has. <br>
+
+            <img src="image/fm.png" alt="example length property"><br>
+           
+
+            <h3>Recursive Functions</h3><hr>
+
+            This is a function that invokes itself until a certain condition is met. when iterative processes are involved it is an important tool to use. the image below shows an example how a recursive functions works. <br>
+
+            <img src="image/fm1.png" alt="example recursive function"><br>
+
+            <h3>Callbacks</h3><hr>
+
+            It can be used to facilitate event-driven asynchronous programming. Instead of waiting for an event to occur, a callback can be created that’s invoked when the event happens. This means that the code is able to run out of order, or asynchronously.Events can be DOM events, such as the click and keyPress. By using callbacks, we ensure that waiting for these tasks to complete doesn't hold up the execution of other parts of the program. The following image shows an example of a function called wait() that accepts a callback. <br>
+            <br>
+
+            <img src="image/fm2.png" alt="example callback"><br>
+
+            <h3>Functions that return functions</h3><hr>
+
+            We see above what callbacks do, enabling functions to accept another function as an argument. In the same vain they can return function too. The following image below is an example showing a function called returnHello() that returns a 'Hello World' function:<br>
+            <br>
+            <img src="image/fm3.png" alt="example return function"><br>
+            <br>
+            To invoke the 'Hello World' function we place parentheses after the variable that it was assigned to, The following image show an example of what we mean:<br>
+            <br>
+
+            <img src="image/fm4.png" alt="example invoking Hellow World"><br>
+            <br>
+
+            <h3>Closures</h3><hr>
+
+            Is a reference to a variable that is created inside the scope of another function, but is then kept alive and used in another part of the program. in actual sense it means that whenever a function is defined inside another function, the inner function will have access to any variables that are declared in the outer function's scope. <br> The image below shows an example code of closures:<br>
+            <br>
+
+            <img src="image/fm5.png" alt="example closures"><br>
+            <br>
+
+            <!---The importance of Ajax--->
+            <h3 id="ajax"> Ajax </h3>
+            Ajax is a set of web development technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading. This means web applications can send and retrieve data from a server asynchronously without interfering with the display and behaviour of the existing page. However for clarity sakes it is good we know what Ajax stands for. Ajax stands for Asynchronous Javascript And Xml. Ajax is just a means of loading data from the server and selectively updating parts of a web page without reloading the whole page.<br> Basically, what Ajax does is make use of the browser's built-in XMLHttpRequest (XHR) object to send and receive information to and from a web server asynchronously, in the background, without blocking the page or interfering with the user's experience.<br> <strong>Understanding How Ajax Works</strong><br>
+            To perform Ajax communication JavaScript uses a special object built into the browser—an XMLHttpRequest (XHR) object—to make HTTP requests to the server and receive data in response. The following image shows an example, demonstrating how Ajax communication works:<br>
+            <br>
+            <img src="image/fmm.png" alt="example demontrate how Ajax comunicates "><br>
+            This Image above helps us understand how Ajax works! However, before we perform Ajax comunication between client and server, the first thing we must do is instantiate an <b>XMLHttpRequest</b> The image below will show us exacly what I mean.<br>
+            <br>
+            <img src="image/fmm1.png" alt="example XMLHttpRequest"> <br>
+            <br>
+
+            The next step needed in sending the request to the server is to instantiating the newly created request object in our image above, using the <b>open()</b> method of the <b>XMLHttpRequest</b> object.<br>
+
+            The <b>open()</b> method thus accepts two parameters-the HTTP request method to use, such as "GET". "POST", etc., and the URL to send the request to like this in the image sample below:<br>
+            <br>
+            <img src="image/fmm0.png" alt="sample HTTP request method"> <br>
+            <br>
+
+            finally to send the request in the image above to the server we use the <b>send()</b> method of the <b>XMLHttpRequest</b> object.<br>
+            <br>
+
+            <img src="image/fmm00.png" alt="sample send() method">
+            <br>
+            <b>Note:</b> The file can be of any kind, like .txt or .xml, or server-side scripting files, like .php or .asp, which can perform some actions on the server (e.g. inserting or reading data from database) before sending the response back to the client.<br>
+
+            The send() method accepts an optional body parameter which allow us to specify the request's body. This is primarily used for HTTP POST requests, since the HTTP GET request doesn't have a request body, just request headers.
+
+        </p>
+    </main>
+    <footer>
+       <button onclick="myCurrentDate()">Day</button>
+       <p id="currentDate"></p>
+       <p> &copy; Joseph Itiose <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+    </footer>
+    <script src="js/lc.js"></script>
+    </body>
+    
+    </html>
+    
