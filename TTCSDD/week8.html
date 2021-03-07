@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> WDD 330 Transforms and Transitions and Canvas, SVG, and Drag and Drop | Joseph Itiose | BYU-Idaho</title>
+    <meta name="description" content=" week 7 - Transforms and Transitions and Canvas, SVG, and Drag and Drop summarized, 
+    documentation site to showcase lesson mastery for Joseph Itiose in wdd 330 at Brigham Young University-Idaho.">
+    <link rel="stylesheet" href="css/lc8.css">
+    <link href="css/normalize.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1> Joseph Itiose</h1>
+    </header>
+
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primaryNav" class="hide">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Next Lesson</a></li>
+        <li><a href="#transformstransitions">Transforms and Transitions</a></li>
+        <li><a href="#canvassvgdragdrop">Canvas, SVG, and Drag and Drop</a></li>
+    </ul> 
+    </nav>
+
+    <main>
+        <h2>Week 8- Transforms and Transitions and Canvas, SVG, and Drag and Drop summarized </h2>
+
+        <!---The importance of Transforms and Transitions-->
+        <h3 id="transformstransitions">Transforms and Transitions</h3>
+
+        <p>
+            CSS transforms and transitions are a powerful way to enhance and delight user experiences on the web. For clarity, we discuss Css transitions and transforms independently. Firstly lets start with <b>Css transitions:</b><br>
+            <h3>Transitons</h3>
+            CSS transitions allows you to change property values smoothly, over a given duration.Without transitions this change would be abruot and take effect immediately. There are four transitions properties, For the purpose of this lesson we are going to discuss the two most required transition properties, which are :<br>
+            <br>
+            <li>transition-property</li><br>
+            <li>transition-duration</li>
+
+            The <b>transition-property</b> makes property to be transitioned specific. It enables individual property application of transition. The example image below will display how <b>transition-property works:</b><br>
+            <br>
+            <img src="image/tran.png" alt="example transition-property"><br>
+            <br>
+
+            Again, <b>tansition-duration</b> on the other hand makes specific time span of the transition. The declaration of the duration could be in seconds (s) or milliseconds (ms). the following image shows an example of <b>tansition-duration</b>:<br>
+            <br>
+            <img src="image/tranD.png" alt="example transition-duration"><br>
+            <br>
+            mind you we have <b>transition-timing-function</b> and <b>transition-delay,</b> they also have their functions in changing property values. For more understanding the image below shows us a shorthand way of using the property together:<br>
+            <br>
+            <img src="image/tranS.png" alt="example shorthand"><br>
+            <br>
+            <h3>Transforms</h3>
+            Transforms allow us to move or change the appearance of an element on a 2D plane. In order for us to produce a smooth animation, it is important we use transitions with transforms. They are set in motion when an element changes state, such as on a hover. In order for us to specify location origin of the transforms we can use two seprate transforms property, such as transform-origin and transform-property.We have four different types of transforms, which are : <br>
+            <br>
+            
+            <li>Rotate</li>
+            <li>Skew</li>
+            <li>Scale and</li>
+            <li>Translate</li>
+
+            <h3>Rotate</h3>
+            This transforms help to rotates an element clockwise or anticlockwise by a specified number of degrees (deg).The positive value (90deg) will rotate the element clockwise while the negative value (.100deg) will rotate the element anticlockwise. Below is an image showing us sample of how the rotate transforms works:<br>
+            <br>
+            <img src="image/tranR.png" alt="sample rotate"><br>
+            <br>
+
+            <h3>Skew</h3>
+            This transforms moves an elements base on values provided on the X and Y axis. A positive X value shift the elements left while a negative X value shifts it right. A positive Y value moves the element down, and a negative Y value moves it up. When only <code>skew</code> is stated and an axis isn't specified, that is equivalent to <code>skewX.</code> To move the element's angle you can include both the X and Y axis. For better undersyanding, see the image sample below:<br>
+            <br>
+            <img src="image/tranSS.png" alt="Skew sample"><br>
+            <br>
+
+            <h3>Scale</h3>
+
+            This transforms increases or decreases the size of an element. The size of an element can be scaled by the X-axis, Y-axis or both. We have the shorthand method <code>scale()</code> that will effect both axes at the same time. The image sample below display scale at work:<br>
+            <br>
+            <img src="image/tranSC.png" alt="sample scale"><br>
+            <br>
+
+            <h3>Translate</h3>
+            This transforms shifts an element right, left, up or down. A positive X value moves the element to the right and a negative X value moves the element to the left, while a positive Y value moves the element downwards and a negative Y value moves the element upwards.Below is sample image showing translate transforms:<br>
+            <br>
+            <img src="image/transT.png" alt="sample translate"><br>
+            <br>
+            We can <b>combine multiple transforms</b> to an elements as this will enable us to get really fancy! the example below shows how multiple transforms works:<br>
+            <br>
+            <img src="image/tranCT.png" alt="sample multiple transform"><br>
+            <br>
+
+            <!---The importance of Canvas, SVG, and Drag and Drop-->
+            <h3 id="canvassvgdragdrop">Canvas, SVG, and Drag and Drop</h3>
+
+            canvas helps to improve the performance of our websites by avoiding the need to download images off the network. With canvas, we can draw shapes and lines, arcs and text, gradients and patterns. using canvas we first need to create it element to the page.<br>
+            <br>
+
+            <li>Drawing on the canvas</li>
+            All drawing on the canvas happens via the Canvas JavaScript API.first, let’s start with the basics. Before we can draw onto a canvas, we need to grab hold of the canvas element on our page: like the example where we set our variable.<br>
+
+            var canvas = document.getElementById("myCanvas"); <br>
+
+            Canvas is an important concept to learn and have a knowledge of to enable us a feel of what it takes to draw using canvas element.
+
+            <h3>Drag and drop</h3>
+
+            Drag and drop is a very common feature. It is when you "grab" an object and drag it to a different location. to make an object draggable you first need to set draggable attribut to <code>true</code> the following image sample shows us how to do this.<br>
+            <br>
+            <img src="image/drag1.png" alt="sample"><br>
+            <br>
+
+            When the dragged data is dropped, a drop event occurs.The example image shows the code sample:<br>
+            <br>
+            <img src="image/drop1.png" alt="sample"><br>
+            <br>
+            For better understanding below is the <strong>Code explanation</strong> in a bullet point.
+
+            <li>Call preventDefault() to prevent the browser default handling of the data (default is open as link on drop)</li>
+            <li>Get the dragged data with the dataTransfer.getData() method. This method will return any data that was set to the same type in the setData() method</li>
+            <li>The dragged data is the id of the dragged element ("drag1")</li>
+            <li>Append the dragged element into the drop element</li>
+
+        </p>
+
+    </main>
+    <footer>
+       <button onclick="myCurrentDate()">Day</button>
+       <p id="currentDate"></p>
+       <p> &copy; Joseph Itiose <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+    </footer>
+    <script src="js/lc.js"></script>
+    </body>
+    
+    </html>
