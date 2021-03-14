@@ -28,12 +28,24 @@ const links = [
 		url: "TTCSDD/week8.html"
 	},
 	{
+		label: "Week 09 Notes",
+		url: "WOHA/week9.html"
+	},
+	{
 		label: "Challenge one: To-Do",
 		url: "todoProject/todo.html"
 	},
 	{
 		label: "Team Activity",
-		url: "TeamActivity/index-F.html"
+		url: "TeamActivity/wk03.html"
+	},
+	{
+		label: "Team Activity",
+		url: "TeamActivity1/wk02.html"
+	},
+	{
+		label: "Team Activity",
+		url: "TeamActivity2/wk04.html"
 	}
 ];
 

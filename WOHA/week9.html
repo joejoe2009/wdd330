@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> WDD 330 Window Object, and HTML5 API | Joseph Itiose | BYU-Idaho</title>
+    <meta name="description" content=" week 9 - Window Object, and HTML5 API summarized, 
+    documentation site to showcase lesson mastery for Joseph Itiose in wdd 330 at Brigham Young University-Idaho.">
+    <link rel="stylesheet" href="css/lc9.css">
+    <link href="css/normalize.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1> Joseph Itiose</h1>
+    </header>
+
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primaryNav" class="hide">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Next Lesson</a></li>
+        <li><a href="#windowobject">Window Object</a></li>
+        <li><a href="#html5api">HTML5 APIs</a></li>
+    </ul> 
+    </nav>
+
+    <main>
+        <h2>Week 9 - Window Object, and HTML5 APIs </h2>
+
+        <!---The importance of Transforms and Transitions-->
+        <h3 id="windowobject">Window Object</h3>
+
+        <p>
+            Every JavaScript environment has a global object. Any variables that are created in the global scope are actually properties of this object, and any functions are methods of it. The browser window that contains a web page is represented as a window object which is the global object that is obtainable in a browser environment. In this lesson we will be looking at the following topics to help us better understand the window object.<br>
+            <li>The Browser Object Model</li>
+            <li>Browser history</li>
+            <li>Controlling windows</li>
+            <li>Cookies</li>
+            <li>Timing functions</li>
+
+            <h3>The Browser Object</h3>
+            The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen. For clarity it is important we know that <code>BOM</code> only makes sense in a browser environment. This means that other environments (such as Node.js) probably won't have a window object, although they will still have a global object; for example, Node.js has an object called global. Not knowing the name of the global object, doesn't matter, it can also be refer to by using the keyword <b>this</b> in the global scope. The following code sample shows us a quick way of assigning the variable global to the global object:<br>
+            <br>
+            <img src="image/gl.png" alt="assigning global variable"><br>
+            <br>
+            Global variables can be accessed in all parts of the program.In a browser environment, the global object is the window object. This means that any global variable created is actually a property of the window object, as can be seen in the image sample below:<br>
+            <br>
+            <img src="image/gl1.png" alt="sample global variable a global object"><br>
+            <br>
+
+            functions we’ve used in the past, such as parseInt() and isNaN(), are actually methods of the global object, which in a browser environment makes them methods of the window object. However it is important we know that, Like variables, it’s customary to omit accessing them through the window object. lets see the sample inage to shows us this:<br>
+            <br>
+            <img src="image/gll.png" alt="sample functions"><br>
+            <br>
+            <h3>The Browser History</h3>
+            To access information about any previously visited pages in the current browser session, we can use the <code>window.history</code>property, In the same vein to show how many pages have been visited before arriving at the current page, we can use the <code>window.history.length</code>property also to go a specific page, say where <b>O</b> is the current page we can use the <code>window.history.go()</code> method. The followimg sample code below shows us how the <code>window.history.go()</code> work:<br>
+            <br>
+            <img src="image/wd.png" alt="sample window history"><br>
+            <br>
+            
+            we also have the <code>window.history.forward()</code> and <code>window.history.back()</code> methods that can be used to navigate forwards and backwards by one page respectively, just like using the browser’s forward and back buttons.
+
+            <h3>Controlling Windows</h3>
+            Openning a new window that takes the URL of the page to be opened as its first parameter, the window title as its second parameter, and a list of attributes as the third parameter, we can use the <code>window.open()</code> method. Mind you it can also be assigned to a variable, so the window can then be referenced later in the code, like the sample images below:<br>
+            <br>
+            <img src="image/wd1.png" alt=""><br>
+            <br>
+            <img src="image/wdd.png" alt=""><br>
+            <br>
+            The <code>close()</code> method can be used to close a window, assuming you have a reference to it:<br>
+            <br>
+            <img src="image/wd2.png" alt=""><br>
+            <br>
+            again we can move a window using the <code>window.moveTo()</code> method. This takes two parameters that are the X and Y coordinates of the screen that the window is to be moved to, below is a sample code:<br>
+            <br>
+            <img src="image/wd3.png" alt=""><br>
+            <br>
+
+            However, resizing a window is made possible using the <code>window.resizeTo()</code> method. This takes two parameters that will specify the width and height of the resized window’s dimensions, the sample code below shows us how this works:<br>
+            <br>
+            <img src="image/wd4.png" alt=""><br>
+            <br>
+
+            <h3>COOKIES</h3>
+            This are small files that are saved locally on user's computer. Every time a user visit a web page there is nothing to show or remembered about. Cookies help to make this visit remembered by storing information that can be retrieved between requests.<br>
+            Cookies have some very important <b>Use</b>, It can be used for personalizing a user's experience, keeping track of user choices(such as a shopping cart),authentication and tracking users, and storing user preferences. AGain for clarity lets pen down what is an HTTp cookie<br>
+            An HTTP cookie (also called web cookie, Internet cookie, browser cookie, or simply cookie) is a small piece of data stored on the user's computer by the web browser while browsing a website. Cookies were designed to be a reliable mechanism for websites to remember stateful information (such as items added in the shopping cart in an online store) or to record the user's browsing activity (including clicking particular buttons, logging in, or recording which pages were visited in the past). They can also be used to remember pieces of information that the user previously entered into form fields, such as names, addresses, passwords, and payment card numbers.
+
+            <h4>Creating Cookies</h4>
+            In creating cookie, you assign it to javaScript's 'cookie jar', using the <code>document.cookie</code> property, like this sample code below:<br>
+            <br>
+            <img src="image/ck.png" alt="sample creating cookie"><br>
+            <br>
+            In the same vein as we create cookie we can also read cookies. To see the current contents of the cookie jar, simply enter <code>document.cookie</code> like so:<br>
+            <br>
+            <img src="image/ck1.png" alt="sample read cookies"><br>
+            <br>
+            <h4>Cookie Expiry Dates</h4>
+            Cookies are deleted once a browser session is finished (when the user closes the browser tab or window).By default cookies are session base. However it can be made to last beyond the browser seession -- by adding <code>"; expires=date"</code> to the end of the cookie when it’s set, where date is a date value in the UTC String format Day,<code>DD-Mon-YYYY HH:MM:SS GMT. </code> The following example sets a cookie to expire in one day’s time:<br>
+            <br>
+            <img src="image/ck2.png" alt="sample set cookie expiring"><br>
+            <br>
+            <h4>DELETING COOKIES</h4>
+            To enable cookie deletion, it need to be set to expire at a time in the past, like the sample below:<br>
+            <br>
+            <img src="image/ck3.png" alt="sample enabling cookie deletion"><br>
+            <br>
+            <img src="image/ckk.png" alt="sample cumbersome cookie deletion"><br>
+            <br>
+            <h3>Timing Functions</h3>
+            <code>SETTIMEOUT()</code><br>
+            <br>
+            The <code>window</code> object provides some useful methods for scheduling the execution of a function and for repeatedly executing functions at regular intervals.<br>
+            The <code>windod.setTimeout()</code> method accepts a callback to a function as its first parameter and a number of milliseconds as its second parameter. Try entering the following example below into a console. It should show an alert dialog after three seconds (that’s 3000 milliseconds):<br>
+            <br>
+            <img src="image/ckk1.png" alt="sample milliseconds"><br>
+            <br>
+            <code>setInterval()</code><br>
+            <br>
+            The <code>window.setInterval()</code> method works in a similar way to <code>window.setTimeout()</code>, except that it will repeatedly involve the callback function after every given number of milliseconds. The following sample code show us how to use a named function:<br>
+            <br>
+            <img src="image/ck0.png" alt=""><br>
+            <br>
+            Now we can set up the interval and assign it to a variable like so:<br>
+            <br>
+            <img src="image/ck00.png" alt=""><br>
+            <br>
+            <!--The Importance of HTML5 API-->
+            <h3 id="html5api">HTML5 APIs</h3>
+            HTML5 is the latest version of the Hypertext Markup Language used to create web pages.<br>
+            <br>
+            <h3>What is an API?</h3>
+            APIs (Application Programming Interfaces) are a way to create applications using pre-built components and are not unique to web development, or even to scripting languages. One of the main goals of an API is to standardize how certain mechanics work and to simplify otherwise complicated programming tasks. APIs are very significant in the world of HTML5 and there a number of them to explore, including Drag and Drop, Web storage, Microdata, and Geolocation, among others. In this lesson we learn the following:<br>
+            <br>
+
+            <li>The development of HTML5 and the JavaScript APIs</li>
+            <li>The data- attribute</li>
+            <li>HTML5 APIs―local storage, geolocation, web workers, and multimedia</li>
+            
+            <h3>The dedevelopment of HTML5 and JavaScript APIs</h3>
+            The W3C plans to develop future versions of HTML5 much more frequently than previously, using smaller version increments. HTML 5.1 has already become the latest standard, and HTML 5.2 is in development.<br>
+            The HTML5 specification is separated into modules that allow different features to be developed at different paces then implemented without having to wait for other features to be completed. This means that wben an unforseen development occurs, a new modeule can be created to cater for it. Modules can be at different stages of maturity, from ideas to full implementation. One very good site that checks if a feature can be used is <a href="http://caniuse.com/">Can I Use</a>.<br>
+            The HTML5 specification contains a number of APIs that help to gain access to hardware, such as cameras, batteries, geolocation, and the graphics card. Hardware evolves quickly, and APIs are frequently introduced to give developers access, and control new features that appear in the latest devices.
+
+            <h3>The data- Attribute</h3>
+            The <code>data-</code> attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser. They’re also private to a page, so are not intended to be used by an external service – their sole purpose is to be used by a JavaScript program. This means they’re good for adding data that can be used as a hook that the program utilizes to access information about a particular element on the page. There are standard format to be followed, but the name and atributes can be decided by the developer. These formats are as follows:<br>
+            <br>
+            <li>Start with data-.</li>
+            <li>Contain only lowercase letters, numbers, hyphens, dots, colons or underscores.</li>
+            <li>Include an optional string value.</li><br>
+            <br>
+            Here the information contained in the attributes can be used to identify particular elements. For example, all the elements with an attribute of data-dropdown could be identified as dropdown menu. The values of the attributes can also be used to filter different elements. For example, we could find all the elements that have a data-rating value of 3 or more. The sample code below shows us how this works:<br>
+            <br>
+            <img src="image/da.png" alt="sample data- attribute"><br>
+            <br>
+            <h3>HTML5 APIs―local storage, geolocation, web workers, and multimedia</h3>
+            The Web Storage API allow a key-value store on the client’s computer that is similar to using cookies but has lesser restrictions, more storage capacity, and is generally easier to use.This makes it idea for storing application-specific information that can then be used during future sessions, again it makes storing information about users possible.<br>
+            <br>
+            For clarity lets state some crucial differences of web storage API from cookies:<br>
+            <br>
+            <li>Storage capacity limit is much larger than the 4KB limit for cookies (there is no actual limit in the specification, but most browsers have a limit set at 5GB per domain).</li><br>
+            <li>Information is available in multiple windows of the browser (but only if the domain is the same).</li><br>
+            <li>Any data stored does not automatically expire as it does with cookies. This potentially makes cookies a better choice for something like showing a popup once a day.</li><br>
+            <li>Information stored is not shared with the server on every request.</li><br>
+
+            when a browser supports the Web Storage API, the <code>window</code> object will have a property called <code>localStorage</code>, which is a native object with a number of properties and methods used to store data. Thus, this information is saved in the form of key-value pairs, and the values can only be strings. Below is an example of storing information. To save a value locally, use:<br>
+            <br>
+            <img src="image/ht.png" alt="sample storing information"><br>
+            <br>
+            <h4>GEOLOCATION</h4>
+            To obtain the geographical position of the device, we use Geolocation API. In actual sense it can be used to find the user’s exact location, then link to nearby places or measure the speed at which the user is moving.  An example of this might be a search function that returns results based on your location. Because of privacy concerns, permission to use this has to be granted by the user first.<br>
+            <br>
+            If geolocation is available, it will be a property of the navigator object, This property has a method called getCurrentPosition() that will return a position object to a specified callback function, called youAreHere() in the example below:<br>
+            <br>
+            <img src="image/htl.png" alt="sample geolocation"><br>
+            <br>
+            The <code>position</code> object has several other properties that can be used to find out information about the location and movement of the device, the <code>position</code> object also has properties that calculate the accuracy of the measurements. <code>position.accuracy</code> property returns the accuracy of the latitude and longitude properties in meters, that help to show the exact position. Find below several other property of the <code>position</code> object:<br>
+            <br>
+
+            <li><code>position.heading</code> property returns the direction the device is moving in. This is measured as a bearing in degrees, clockwise from North.</li><br>
+            <li><code>position.speed</code> property returns the ground speed of the device in meters per second.</li><br>
+            <li><code>position.altitude</code> property returns an estimate of the device’s altitude in meters above the WGS84 ellipsoid, which is a standard measurement for the center of the Earth.</li><br>
+            <li><code>position.timestamp</code> property returns the time that the position information was recorded.</li><br>
+            <br>
+            In addition, the geolocation object has a <code>watchPosition()</code> method that will call a callback function every time the position of the device is updated. This method returns an ID that can be used to reference the position being watched, The sample below gives us a better illustration:<br>
+            <br>
+            <img src="image/gh.png" alt="sample watchposyion()"><br>
+            <br>
+            In the same vein The <code>clearWatch()</code> method can be used to stop the callback being called,  using the ID of the watch as an argument:<br>
+            <br>
+            <img src="image/gh1.png" alt="sample clearwatch()"><br>
+            <br>
+            The Geolocation API provides a useful interface for adding location-based information to a website or application. More information can be found at the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation">Mozilla Developer
+                Network</a><br>
+                <br>
+            <h4>Web Workers</h4>
+            Web workers are a simple means for web content to run scripts in background threads, allow processes to be run in the background, adding support for concurrency in JavaScript. When a website continue to function without fear of the dreaded 'script has become unresponsive' message that occurs when a script run for too long , shown below:<br> 
+            <br>
+            <img src="image/wb.png" alt="sample web unresposive nessage"><br>
+            <br>
+            A worker is an object created using a constructor (e.g. Worker()) that runs a named JavaScript file — this file contains the code that will run in the worker thread; You can run whatever code you like inside the worker thread, with some exceptions. <br>
+            <br>
+            For better understanding of this web worker, how it functions, you can find more information at <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Mozilla Developer Network</a><br>
+            <br>
+
+            <h4>MULTIMEDIA</h4>
+            Multimedia is the use of a computer to present and combine text, graphics, audio, and video with links and tools that let the user navigate, interact, create, and communicate. HTML5 introduced the <<code>audio</code>> and <<code>video</code>> tags used to insert audio and video clips into a web page. It also introduced a Media API for controlling the playback of the clips using JavaScript.<br>
+             
+            An audio clip can be inserted into a page with the <<code>audio</code>> tag, using the src attribute to point to the audio file, while a video clip can be inserted with the <<code>video</code>> tag, using the src attribute to point to the movie file. The follwing images thus demonstarte how this is done:<br>
+            <br>
+            <img src="image/mm.png" alt="sample audio tag"><br>
+            <br>
+            <img src="image/mm1.png" alt="sample video tag"><br>
+            <br>
+            More information on multimedia can be found at <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding">Mozilla Developer Network</a>
+
+
+        </p>
+
+    </main>
+    <footer>
+       <button onclick="myCurrentDate()">Day</button>
+       <p id="currentDate"></p>
+       <p> &copy; Joseph Itiose <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+    </footer>
+    <script src="js/lc.js"></script>
+    </body>
+    
+    </html>
+
+   

@@ -1,0 +1,190 @@
+main {
+    background-color: rgb(122, 173, 175);
+
+}
+
+blockquote {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body {
+    font-size: 16px;
+    line-height: 32px;
+    font-family: Trebuchet MS, sans-serif;
+    color: black;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: whitesmoke;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align:justify;
+    border-bottom: 1px solid #bbb;
+}
+
+header,
+main,
+footer,
+nav {
+    margin: 1.25rem auto;
+    padding: .25rem 1.5rem .5rem;
+    max-width: 900px;
+}
+
+header,
+footer,
+footer a {
+    text-align: center;
+    background-color: darkslategrey;
+    color: whitesmoke;
+}
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+nav {
+    text-align: center;
+    background-color: antiquewhite;
+    color: whitesmoke;
+}
+
+nav a {
+    padding: 10px;
+    margin: 10px;
+}
+
+nav button{
+    margin: .2rem 2%;
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+
+nav {
+    background-color: antiquewhite;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: .8rem 2%;
+    color: #B9B90D;
+    text-decoration: none;
+    font-size: .9rem;
+    text-align: center;
+}
+
+
+nav ul li.active a {
+    background-color: #000;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    background-color: #aaa;
+    color: #333;
+}
+
+nav ul.hide {display: none;}
+
+footer {
+    font-size: 0.75rem;
+}
+
+ul li ul li {
+    list-style-type: none;
+}
+
+input[type=text], input[type=number] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  #req2Button, #req1Button, #req3Button, #stretchAdd, #stretchSub, #stretchMult {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+/* 35em is also 560px (if basefont is 16px) */
+@media only screen and (min-width: 35rem) {
+
+
+    /*----------- BODY --------------*/
+    
+    
+    
+    /*----------- HEADER --------------*/
+        header img{width: auto;}
+        header h1{font-size: 2rem;}
+        header h2{font-size: 1.5rem;}
+    
+    /*----------- NAVIGATION --------------*/
+    nav button {display: none;}
+    
+    nav ul {margin-left: 2%;}
+    
+    nav ul li {
+        float: left;
+    }
+    
+    nav ul li a{
+        border: none;
+        border-right: 1px solid rgba(0,0,0,0.3);
+        padding: .8rem 1rem;
+    }
+    
+    nav ul.hide {display: block;}
+}
+
+/* 64em is also 1028px (if basefont is 16px) */
+@media only screen and (min-width: 64rem) {
+
+    header, nav, main, footer {
+        max-width: 64rem;
+        margin:1.25rem auto;
+    }
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+
+
+/*----------- NAVIGATION --------------*/
+
+nav ul li a {padding: .6rem 1rem;}
+
+
+/*----------- MAIN --------------*/
+div.container figure {
+    flex-basis: 29%;
+}
+
+form label.sbs {
+    padding: .4rem 0;
+}
+}
