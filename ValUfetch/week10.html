@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> WDD 330 Validating forms, and Using Fetch | Joseph Itiose | BYU-Idaho</title>
+    <meta name="description" content=" week 10 - Validating forms, and Using Fetch summarized, 
+    documentation site to showcase lesson mastery for Joseph Itiose in wdd 330 at Brigham Young University-Idaho.">
+    <link rel="stylesheet" href="css/lc10.css">
+    <link href="css/normalize.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1> Joseph Itiose</h1>
+    </header>
+
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primaryNav" class="hide">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Next Lesson</a></li>
+        <li><a href="#validatingforms">Validating forms</a></li>
+        <li><a href="#usingfetch">Using Fetch</a></li>
+    </ul> 
+    </nav>
+
+    <main>
+        <h2>Week 10 - Validating forms, and Using Fetch </h2>
+
+        <!---The importance of Validating forms, and Using Fetch-->
+        <h3 id="validatingforms">Validating forms</h3>
+
+        <p>
+            Forms are used in webpages for the user to enter their required details that further send it to the server for processing. First of all, the form must be checked to make sure all the mandatory fields are filled in. The data entered into a form needs to be in the right format and certain fields need to be filled in order to effectively use the submitted form. Username, password, contact information are some details that are mandatory in forms and thus need to be provided by the user. Below are basic forms validations:<br>
+            <li>Validation done in the browser is called client-side validation</li>
+            <li>Validation done on the server is called server-side validation</li><br> For clarity let see the reason for validating a form below:<br>
+            <li>We want to protect our users' data</li>
+            <li>We want to get the right data, in the right format</li>
+            <li>We want to protect ourselves</li><br>
+            There are two different types of client side validation.<br>
+            <li>Built-in form validation, and</li>
+            <li>JavaScript</li><br>
+            <h4>Built-in form validation</h4>
+            This type of client side validation uses HTML5 form validation features. Generally built in form validation does not require much JavaScript. Built-in form validation has better performance than JavaScript,  thus does validation using validation attributes on form elements, such as this ones below:
+            <li><code>required:</code>Specifies whether a form field needs to be filled in before the form can be submitted.</li>
+            <li><code>minlength</code> and <code>maxlength:</code> Specifies the minimum and maximum length of textual data (strings)</li>
+            <li><code>min</code> and <code>max</code> Specifies the minimum and maximum values of numerical input types
+                type: Specifies whether the data needs to be a number, an email address, or some other</li>
+            <li><code>pattern:</code>Specifies a regular expression that defines a pattern the entered data needs to follow.</li><br>
+            The simplest change that can be done to a form is to mark a text input field as 'required', below is a sample image showing how the html is to be written:<br>
+            <img src="image/fv.png" alt="sample showing built in form validation"><br>
+            <br>
+            <h4>JavaScript</h4>
+            This type of client side validation is customizable and is coded using JavaScript,this will enable one take control over the look and feel of native error messages or to deal with legacy browsers that do not support HTML's built-in form validation. <br>
+            <h4>The Constraint Validation API</h4>
+            This makes the following properties available for use on some form element DOM interfaces:
+            <ul>
+                <li><code>validationMessage</code> Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation<br> <code>(willValidate is false)</code> r the element's value satisfies its constraints (is valid), this will return an empty string.</li><br>
+            <li><code>validity</code> Returns a <code>ValidityState</code> object that contains several properties describing the validity state of the element. below is some of the <code>ValidityState</code> properties<br> <ul><li><code>patternMismatch</code></li> <li><code>tooLong</code></li> <li><code>maxlength</code></li> <li><code>tooShort</code></li> <li><code>minlength</code></li> <li><code>rangeOverflow</code></li> <li><code>rangeUnderflow</code></li> <li><code>typeMismatch</code></li> <li><code>valid</code></li> <li><code>valueMissing</code></li> <li><code>checkValidity()</code></li> <li><code>setCustomValidity(message)</code></li>
+            </ul></li>
+            <li><code>willValidate</code> Returns <code> true</code> if the element will be validated when the form is submitted; false otherwise.</li> </ul>
+          
+            
+            
+            The image below show a sample of JavaScript form Validation:<br>
+            <br>
+            <img src="image/fv1.png" alt="sample showing javascript form validation"><br>
+            
+            <h4 id="Validating against a regular expression"><a href="#validating_against_a_regular_expression" title="Permalink to Validating against a regular expression">Validating against a regular expression</a></h4>
+            <ul><li>A regular expression (regex) is a pattern that can be used to match character combinations in text strings, so regexps are ideal for form validation and serve a variety of other uses in JavaScript.</li></ul>
+
+            <p>Below are some examples to let you how regex works</p>
+
+            <ul>
+                <li><code>a</code> - Matches one character that is <code>a</code> (not <code>b</code>, not <code>aa</code>, and so on).</li>
+                <li><code>abc</code> - Matches <code>a</code>, followed by <code>b</code>, followed by <code>c</code>.</li>
+                <li><code>ab?c</code> - Matches <code>a</code>, optionally followed by a single <code>b</code>, followed by <code>c</code>. ( <code>ac</code> or <code>abc</code>)</li>
+                <li><code>ab*c</code> - Matches <code>a</code>, optionally followed by any number of <code>bs</code>, followed by <code>c</code>. ( <code>ac</code> , <code>abc</code>, <code>abbbbbc</code>, and so on).</li>
+                <li><code>a|b</code> - Matches one character that is <code>a</code> or <code>b</code>.</li>
+                <li><code>abc|xyz</code> - Matches exactly <code>abc</code> or exactly <code>xyz</code> (but not <code>abcxyz</code> or <code>a</code> or <code>y</code>, and so on).</li>
+                <p> For better understanding ad many more examples of regex please view this link <a href="/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">Regular expressions</a> </p>
+            </ul>
+
+            <h4>Validating with API</h4>
+            <p>Validating HTTP Response Codes
+               <li>The status code normally associated with a successful response is 200 (“OK”). However, all 2xx status codes indicate that from the server’s point of view a valid request was received, it was processed, and an appropriate response was delivered to the client. The 2xx status codes that are greater than 200 provide additional information about the processing performed by the targeted server, or by a proxy server along the Internet path between the client and the target server.</li> 
+            </p>
+
+            <p>Validating HTTP Headers
+                <li>Another way to validate that an API is functioning properly is to examine HTTP Headers that are returned with an API’s response </li> to know and understand how HTTP Headers work please view this link <a href="https://www.apiscience.com/blog/javascript-validate-api-http-headers/">validate HTTP headers</a>
+            </p>
+
+    
+        <h3 id="usingfetch">Using Fetch</h3>
+        Fetch has some interesting web function, below are some of it veru impoertant funtions:
+            <li>Fetch API interface allows web browser to make HTTP requests to web servers.</li> 
+            <li>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses</li>
+            <li> <code>fetch()</code> method provides an easy, logical way to fetch resources asynchronously across the network.</li>
+            <li><code>fetch()</code> won’t reject on HTTP error status</li>
+            <li><code>fetch()</code> won’t send cross-origin cookies</li>
+            <li><code>fetch()</code> takes one argument </li>
+
+            <h4>Headers</h4>
+            <li>The Headers interface allows you to create your own headers object via the Headers() constructor. A headers object is a simple multi-map of names to values:</li>
+            <li>All of the Headers methods throw a <code>TypeError</code> if a header name is used that is not a valid HTTP Header name. The mutation operations will throw a <code>TypeError</code> if there is an immutable guard. Otherwise, they fail silently.<br>
+                Headers' objects have a guard property, this is not exposed to the Web, but it affects which mutation operations are allowed on the headers object. Possible guard values are:
+                <ul>
+                    <li><code>none:</code> default.</li>
+                    <li><code>request:</code> guard for a headers object obtained from a request (<a href="/en-US/docs/Web/API/Request/headers"><code>Request.headers</code></a>).</li>
+                    <li><code>request-no-cors:</code> guard for a headers object obtained from a request created with <a href="/en-US/docs/Web/API/Request/mode"><code>Request.mode</code></a> <code>no-cors.</code></li>
+                    <li><code>response:</code> guard for a headers object obtained from a response (<a href="/en-US/docs/Web/API/Response/headers"><code>Response.headers</code></a>).</li>
+                    <li><code>immutable:</code> guard that renders a headers object read-only; mostly used for ServiceWorkers</li>
+                </ul>
+            </li>
+
+            <h4>Response objects</h4>
+            Response instances are returned when fetch() promises are resolved, the most common response properties you'll use are:
+            <li><a href="/en-US/docs/Web/API/Response/status"><code>Response.status</code></a> — An integer (default value 200) containing the response status code.</li>
+            <li><a href="/en-US/docs/Web/API/Response/statusText"><code>Response.statusText</code></a> — A string (default value ""), which corresponds to the HTTP status code message. Note that HTTP/2 does not support status messages.</li>
+            <li><a href="/en-US/docs/Web/API/Response/ok"><code>Response.ok</code></a> — seen in use above, this is a shorthand for checking that status is in the range 200-299 inclusive. This returns a <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"><code>Boolean</code>.</a></li><br>
+
+            The Response() constructor takes two optional arguments — a body for the response, and an init object.
+
+            <h4>Supplying request options</h4>
+
+            The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings: 
+
+            <li><code>response.blob()</code> - return the response as Blob</li>
+            <li><code>response.text()</code> - read the response and return as text</li>
+            <li><code>response.arrayBuffer()</code> - return the response as ArrayBuffer</li>
+            <li><code>response.formData()</code> - return the response as FormData object </li>
+            <li><code>response.json()</code> - parse the response as JSON</li>
+
+            <p> An options object containing any custom settings that you want to apply to the request.The possible options are:
+                <ul>
+                    <li><code>method :</code> The request method, e.g., <code>GET</code>, <code>POST</code>. The default is <code>GET</code>.</li>
+                    <li><code>headers :</code> Any headers you want to add to your request, contained within a <a href="/en-US/docs/Web/API/Headers"><code>Headers</code></a> object or an object literal with <a href="/en-US/docs/Web/API/ByteString"><code>ByteString</code></a> values</li>
+                    <li><code>body</code> Any body that you want to add to your request: this can be a <a href="/en-US/docs/Web/API/Blob"><code>Blob</code></a> <a href="/en-US/docs/Web/API/BufferSource"><code>BufferSource</code></a> <a href="/en-US/docs/Web/API/FormData"><code>FormData</code></a> <a href="/en-US/docs/Web/API/URLSearchParams"><code>URLSearchParams</code></a> <a href="/en-US/docs/Web/API/USVString"><code>USVString</code></a> or <a href="/en-US/docs/Web/API/ReadableStream"><code>ReadableStream</code></a> object. Note that a request using the <code>GET</code> or <code>HEAD</code> method cannot have a body.</li>
+                    <li><code>mode</code> The mode you want to use for the request, e.g., <code>cors</code>, no-cors, <code>same-origin</code>, or <code>navigate</code>. The default is <code>cors</code>.</li>
+                    <li><code>credentials</code> The request credentials you want to use for the request: <code>omit</code>, <code>same-origin</code>, or <code>include</code>. The default is <code>same-origin</code>.</li>
+                    <li><code>cache</code> The <a href="/en-US/docs/Web/API/Request/cache">cache
+                        mode</a> you want to use for the request</li>
+                    <li><code>redirect</code> The redirect mode to use: <code>follow</code>, <code>error</code>, or <code>manual</code>. The default is <code>follow</code>.</li>
+                    <li><code>referrer</code> A <a href="/en-US/docs/Web/API/USVString"><code>USVString</code></a> specifying <code>no-referrer</code>, <code>client</code>, or a URL. The default is <code>about:client</code>.</li>
+                    <li><code>integrity</code> Contains the <a href="/en-US/docs/Web/Security/Subresource_Integrity">subresource integrity</a> integrity value of the request (e.g., <code>sha256-BpfBw7ivV8q2jLiT13fxDYAe2tJllusRSZ273h2nFSE=</code>).</li>
+                </ul>
+
+            </p>
+
+
+        </p>
+
+    </main>
+    <footer>
+       <button onclick="myCurrentDate()">Day</button>
+       <p id="currentDate"></p>
+       <p> &copy; Joseph Itiose <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+    </footer>
+    <script src="js/lc.js"></script>
+    </body>
+    
+    </html>

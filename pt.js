@@ -32,6 +32,10 @@ const links = [
 		url: "WOHA/week9.html"
 	},
 	{
+		label: "Week 10 Notes",
+		url: "ValUfetch/week10.html"
+	},
+	{
 		label: "Challenge one: To-Do",
 		url: "todoProject/todo.html"
 	},
