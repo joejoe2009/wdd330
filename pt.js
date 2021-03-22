@@ -50,6 +50,22 @@ const links = [
 	{
 		label: "Team Activity",
 		url: "TeamActivity2/wk04.html"
+	},
+	{
+		label: "Team Activity",
+		url: "TeamActivity3/wk05.html"
+	},
+	{
+		label: "Team Activity",
+		url: "TeamActivty5/wk8.html"
+	},
+	{
+		label: "Team Activity",
+		url: "TeamActivity7/index.html"
+	},
+	{
+		label: "Team Activity",
+		url: "TeamActivity10/index.html"
 	}
 ];
 
