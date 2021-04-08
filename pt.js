@@ -66,6 +66,10 @@ const links = [
 	{
 		label: "Team Activity",
 		url: "TeamActivity10/index.html"
+	},
+	{
+		label: "Team Activity",
+		url: "TeamActivity11/client/week11.html"
 	}
 ];
 

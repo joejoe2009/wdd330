@@ -1,0 +1,84 @@
+html {
+    width: 95%;
+    margin: 0 auto;
+    background-color: #E6E1D3;
+    font-family: 'Oswald', sans-serif;   
+}
+
+button {
+    display: block;
+}
+
+h1 {
+    color: #0F0F0F;
+    font-family: 'Oswald', sans-serif;
+    font-size: 70px;
+}
+
+
+
+/* CLASS Selectors */
+/* .showChart {
+    margin-top: 2px;;
+} */
+
+.getPer {
+    border: 5px outset red;
+    background-color: lightblue;
+    text-align: auto;
+    margin-top: 5px; 
+}
+
+.ent {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #bacac4;
+    color: white;
+  }
+button[type=button] {
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+button:active {
+    background-color: orange;
+    box-shadow: 0 5px gray;
+    transform: translateY(2px);
+ }
+
+ 
+/* ID Selectors */
+
+/* #output {
+    color: #617F3B;
+    font-family: 'Mulish', sans-serif;
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+} */
+
+@media only screen and (min-width: 768px) {
+    /* .sto {
+        display: flex;
+       height: 4vw;
+    }
+
+    .sto h2 {
+        margin-right: 10px;
+        
+    } */
+  
+}

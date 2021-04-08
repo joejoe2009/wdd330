@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> WDD 330 Block 2 Challenge | Joseph Itiose | BYU-Idaho</title>
+    <meta name="description" content=" Final Project - Block 2 Challenge Weekly budget record, 
+    documentation site to showcase lesson mastery for Joseph Itiose in wdd 330 at Brigham Young University-Idaho.">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">   
+
+</head>
+
+<body>
+    <h1>Weekly Budget</h1>
+    <main>
+        <p>Enter the hours worked and expected wage per hour to see <b>after tax pay.</b></p>
+        <div class="">
+        <label for="">Please enter hours worked </label>
+        <input type="text" id="hoursWorked" size="5" />
+        </div>
+        <div class="">
+        <label for="">Please enter your wage per hour</label>
+        <input type="text" id="wage" size="5" />
+        </div>
+
+        <button type="button" onclick="displayPay()">Show pay</button>
+        <div id="showOutput"></div>
+
+        <p>Enter the percentage amount for each expense. <b>Percentage amount should total 100%.</b></p>
+        <div class="getPer">
+          <div class="ent">
+          <label for="">Please enter percengtage for groceries</label>
+          <input type="text" id="groceries" required minlength="4" maxlength="8" size="10">
+          </div>
+          <div class="ent">
+          <label for="">Please enter percengtage for housing</label>
+          <input type="text" id="housing" required minlength="4" maxlength="8" size="8">
+          </div>
+          <div class="ent">
+          <label for="">Please enter percengtage for basic utilities</label>
+          <input type="text" id="basicUtilities" required minlength="4" maxlength="8" size="8">
+          </div>
+          <div class="ent">
+          <label for="">Please enter percengtage for transportation</label>
+          <input type="text" id="transportation" required minlength="4" maxlength="8" size="8">
+          </div>
+          <div class="ent">
+          <label for="">Please enter percengtage for Insurance</label>
+          <input type="text" id="insurance" required minlength="4" maxlength="8" size="8">
+          </div>
+        </div>
+        <button type="button" onclick="getExpenses()">Display budget</button>
+        <div id="outputExp"></div>
+        <div class="sto">
+        <h2>Local Storage:</h2>
+        <p id="localStorage"></p>
+        <button type="button" onclick="clearStorage()">Clear LocalStorage</button>
+       </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
