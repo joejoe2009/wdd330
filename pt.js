@@ -70,6 +70,10 @@ const links = [
 	{
 		label: "Team Activity",
 		url: "TeamActivity11/client/week11.html"
+	},
+	{
+		label: "Block 2 Challenge",
+		url: "Block2Challenge/block2.html"
 	}
 ];
 
